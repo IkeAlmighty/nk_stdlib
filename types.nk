@@ -1,0 +1,27 @@
+
+type: (obj) {
+	return {
+		type_id: obj.__id__
+	}
+}
+
+
+# assumes that non-scope primitives all have 
+# __id__ available through dot notation, and
+# that all scopes have an __id__ unique to 
+# them:
+
+string: type("")
+int: type(0)
+float: type(1.1)
+bool: type(true)
+
+# my thought on __id__ is that primitives have the same
+# __id__ per language version - 
+
+# but scopes generate their __id__ based on ast or IR
+# of the scope.
+
+# this means that types of a scope running on one device
+# would be the exact same as the same implementation
+# running on another device. 
